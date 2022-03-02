@@ -1,17 +1,11 @@
 package com.example.naigationactivity
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.library.binding.BindingFragment
+import com.example.naigationactivity.databinding.FragmentMainBinding
 
-class MainFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
+
+    override fun init() {
+        super.init()
     }
 }

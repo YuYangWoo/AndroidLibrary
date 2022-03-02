@@ -1,4 +1,4 @@
-package com.example.library
+package com.example.library.navigation
 
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.ViewDataBinding
@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.library.binding.BindingActivity
 
 open class NavigationActivity<VB: ViewDataBinding>(private val layoutId: Int, private val navHostId: Int) : BindingActivity<VB>(layoutId){
     private val navController by lazy { (supportFragmentManager.findFragmentById(navHostId) as NavHostFragment).navController}
