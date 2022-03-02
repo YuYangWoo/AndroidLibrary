@@ -1,11 +1,29 @@
 package com.example.library
 
-import android.content.Context
-import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.databinding.ViewDataBinding
+import androidx.navigation.ActivityNavigator
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 
-class NavigationActivity {
-    companion object {
-        fun longToast(context: Context, msg: String) = Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
-        fun shortToast(context: Context, msg: String) = Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+open class NavigationActivity<VB: ViewDataBinding>(private val layoutId: Int, private val navHostId: Int) : BindingActivity<VB>(layoutId){
+    private val navController by lazy { (supportFragmentManager.findFragmentById(navHostId) as NavHostFragment).navController}
+    private val appBarConfiguration by lazy { AppBarConfiguration(navController.graph)}
+
+    override fun setSupportActionBar(toolbar: Toolbar?) {
+        super.setSupportActionBar(toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp() || navController.navigateUp(appBarConfiguration)
+    }
+
+    override fun finish() {
+        super.finish()
+        ActivityNavigator.applyPopAnimationsToPendingTransition(this)
+    }
+
 }
