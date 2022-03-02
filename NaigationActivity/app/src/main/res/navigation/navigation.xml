@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.naigationactivity.SecondFragment"
-        android:label="SecondFragment" />
+        android:label="SecondFragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogFragment"
+        android:name="com.example.naigationactivity.DialogFragment"
+        android:label="DialogFragment" />
 </navigation>

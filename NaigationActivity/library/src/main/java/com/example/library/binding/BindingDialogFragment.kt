@@ -21,7 +21,7 @@ open class BindingDialogFragment<VB: ViewDataBinding>(private val layoutId: Int)
         return binding.root
     }
 
-    private fun init() {
+    protected open fun init() {
 
     }
 }
