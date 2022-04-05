@@ -21,7 +21,7 @@ Add it in your root build.gradle at the end of repositories:
 
 # Before
 
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val navController by lazy {
         (supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment).navController
@@ -46,7 +46,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 	
 # After
 	
-class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_main, R.id.fragmentContainerView) {
+ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_main, R.id.fragmentContainerView) {
 
 }
 
