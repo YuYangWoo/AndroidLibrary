@@ -12,7 +12,7 @@ import androidx.fragment.app.DialogFragment
 
 open class BaseDialogFragment : DialogFragment() {
     companion object {
-        const val TAG = "LifeCycle"
+        const val TAG = "BaseDialogFragment"
     }
 
     override fun onAttach(context: Context) {
