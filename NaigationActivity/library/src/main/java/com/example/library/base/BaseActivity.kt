@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity : AppCompatActivity() {
     companion object {
-        const val TAG = "LifeCycle"
+        const val TAG = "BaseActivity"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

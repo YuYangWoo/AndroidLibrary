@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 
 open class BaseFragment : Fragment() {
     companion object {
-        const val TAG = "LifeCycle"
+        const val TAG = "BaseFragment"
     }
 
     override fun onAttach(context: Context) {
