@@ -53,6 +53,7 @@ Add it in your root build.gradle at the end of repositories:
 	
 # Before
 
+
 class MainFragment : Fragment() {
     private lateinit var binding: ViewDataBinding
     override fun onCreateView(
@@ -74,13 +75,12 @@ class MainFragment : Fragment() {
 # After
 
 class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
-
     override fun init() {
         super.init()
         // TODO
     }
 }
 
-If you use DialogFragment, use BindingDialogFragment!
-You can use that like BindingFragment!
-It's too Simple!
+If you use DialogFragment, use BindingDialogFragment!  
+You can use that like BindingFragment!  
+It's too Simple!  
