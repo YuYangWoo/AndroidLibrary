@@ -1,5 +1,5 @@
 # AndroidLibrary
-안드로이드 라이브러리를 테스트하면서 개발
+You can use easily BaseActivity, BaseFragment, BaseDialogFragment using inherit
 
 Step 1. Add the JitPack repository to your build file
 
