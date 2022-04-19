@@ -21,6 +21,7 @@ Add it in your root build.gradle at the end of repositories:
 
 # Before
 
+```
  class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val navController by lazy {
@@ -42,18 +43,19 @@ Add it in your root build.gradle at the end of repositories:
     }
 
 }
-
+```
 	
 # After
-	
+
+```
  class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_main, R.id.fragmentContainerView) {
 
 }
-
+```
 	
 # Before
 
-
+```
 class MainFragment : Fragment() {
     private lateinit var binding: ViewDataBinding
     override fun onCreateView(
@@ -71,16 +73,17 @@ class MainFragment : Fragment() {
 
     }
 }
-	
-# After
+```
 
+# After
+```
 class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
     override fun init() {
         super.init()
         // TODO
     }
 }
-
+```
 If you use DialogFragment, use BindingDialogFragment!  
 You can use that like BindingFragment!  
 It's too Simple!  
