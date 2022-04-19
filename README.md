@@ -52,6 +52,20 @@ Add it in your root build.gradle at the end of repositories:
 
 }
 ```
+If you don't use action bar then add toolbar in xml and use following code
+```
+class MainAcitivty : NavigationActivity<ActivityMainBinding>(R.layout.activity_main, R.id.fragment) {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initToolBar()
+    }
+
+    private fun initToolBar() {
+        setSupportActionBar(binding.toolbar)
+    }
+}
+```
+
 	
 # Before
 
