@@ -50,4 +50,37 @@ Add it in your root build.gradle at the end of repositories:
 
 }
 
+	
+# Before
+
+class MainFragment : Fragment() {
+    private lateinit var binding: ViewDataBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+        // TODO YOUR JOB
+        init()
+        return binding.root
+    }
+
+    protected open fun init() {
+
+    }
+}
+	
+# After
+
+class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
+
+    override fun init() {
+        super.init()
+        // TODO
+    }
+}
+
+If you use DialogFragment, use BindingDialogFragment!
+You can use that like BindingFragment!
 It's too Simple!
